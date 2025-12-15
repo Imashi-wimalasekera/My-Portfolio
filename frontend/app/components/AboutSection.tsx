@@ -79,20 +79,20 @@ export default function AboutSection() {
               whileHover={{ y: -5 }}
               className="relative group"
             >
-              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 h-full transition-all duration-300 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10">
+              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 h-full transition-all duration-300 hover:bg-gray-900/80 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/30">
                 {/* Icon */}
                 <div className="flex justify-center mb-6">
-                  <div className="text-purple-400 group-hover:text-purple-300 transition-colors">
+                  <div className="text-purple-400 group-hover:text-purple-200 transition-colors duration-300">
                     {feature.icon}
                   </div>
                 </div>
                 
                 {/* Text */}
                 <div className="text-center">
-                  <h3 className="text-xl font-bold text-white mb-1">
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-purple-300 transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-xl font-bold text-white">
+                  <p className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
                     {feature.subtitle}
                   </p>
                 </div>

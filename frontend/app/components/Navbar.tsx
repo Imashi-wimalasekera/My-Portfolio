@@ -2,9 +2,36 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const menuItems = ['HOME', 'About', 'Education', 'Skills', 'Projects', 'Contact'];
+  const [activeSection, setActiveSection] = useState('HOME');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = menuItems.map(item => ({
+        name: item,
+        element: document.getElementById(item.toLowerCase())
+      }));
+
+      let currentSection = 'HOME';
+      
+      sections.forEach(({ name, element }) => {
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150) {
+            currentSection = name;
+          }
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <motion.nav 
@@ -21,18 +48,18 @@ export default function Navbar() {
 
         {/* Navigation Menu */}
         <ul className="hidden md:flex items-center gap-8">
-          {menuItems.map((item, index) => (
+          {menuItems.map((item) => (
             <li key={item}>
               <Link 
                 href={`#${item.toLowerCase()}`}
-                className={`text-sm font-medium transition-colors hover:text-purple-400 ${
-                  index === 0 ? 'text-purple-500' : 'text-gray-300'
+                className={`text-sm font-medium transition-colors relative ${
+                  activeSection === item ? 'text-purple-500' : 'text-gray-300 hover:text-purple-400'
                 }`}
               >
                 {item}
-                {index === 0 && (
+                {activeSection === item && (
                   <motion.div 
-                    className="h-0.5 bg-purple-500 mt-1"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-500"
                     layoutId="underline"
                   />
                 )}
