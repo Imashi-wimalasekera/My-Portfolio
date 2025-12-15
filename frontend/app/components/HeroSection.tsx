@@ -28,8 +28,8 @@ export default function HeroSection() {
           <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
           <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" />
         </svg>
-      ), className: 'top-[48%] left-[85%] text-blue-400', animType: 'zoom' },
-    { id: 'sparkle4', content: <span className="text-2xl text-emerald-400">✦</span>, className: 'top-[52%] right-[8%]', animType: 'drift' },
+      ), className: 'top-[25%] left-[92%] text-blue-400', animType: 'zoom' },
+    { id: 'sparkle4', content: <span className="text-2xl text-pink-400">✦</span>, className: 'top-[52%] right-[8%]', animType: 'drift' },
     
     // Lower-middle row
     { id: 'dot4', content: <span className="text-3xl text-purple-400">•</span>, className: 'top-[65%] left-[10%]', animType: 'drift' },
@@ -70,18 +70,18 @@ export default function HeroSection() {
           <path d="M12 2h4a4 4 0 010 8h-4z" />
           <path d="M12 10a4 4 0 100 8 4 4 0 000-8z" />
         </svg>
-      ), className: 'top-[55%] right-[12%]', animType: 'zoom' },
+      ), className: 'top-[68%] right-[12%]', animType: 'zoom' },
     { id: 'dot6', content: <span className="text-4xl text-indigo-400">•</span>, className: 'top-[18%] right-[15%]', animType: 'drift' },
     
     // Additional sparkles and squares to fill empty spaces
-    { id: 'sparkle7', content: <span className="text-lg text-emerald-300">✦</span>, className: 'top-[20%] left-[18%]', animType: 'zoom' },
-    { id: 'sparkle8', content: <span className="text-xl text-teal-400">✦</span>, className: 'top-[35%] left-[38%]', animType: 'drift' },
-    { id: 'sparkle9', content: <span className="text-lg text-cyan-300">✦</span>, className: 'top-[42%] left-[60%]', animType: 'zoom' },
-    { id: 'sparkle10', content: <span className="text-xl text-emerald-400">✦</span>, className: 'top-[58%] left-[18%]', animType: 'drift' },
-    { id: 'sparkle11', content: <span className="text-lg text-teal-300">✦</span>, className: 'top-[72%] left-[35%]', animType: 'zoom' },
-    { id: 'sparkle12', content: <span className="text-xl text-cyan-400">✦</span>, className: 'top-[78%] left-[70%]', animType: 'drift' },
-    { id: 'sparkle13', content: <span className="text-lg text-emerald-300">✦</span>, className: 'top-[15%] left-[52%]', animType: 'zoom' },
-    { id: 'sparkle14', content: <span className="text-xl text-teal-400">✦</span>, className: 'top-[48%] left-[42%]', animType: 'drift' },
+    { id: 'sparkle7', content: <span className="text-lg text-pink-300">✦</span>, className: 'top-[20%] left-[18%]', animType: 'zoom' },
+    { id: 'sparkle8', content: <span className="text-xl text-pink-400">✦</span>, className: 'top-[35%] left-[38%]', animType: 'drift' },
+    { id: 'sparkle9', content: <span className="text-lg text-pink-300">✦</span>, className: 'top-[42%] left-[60%]', animType: 'zoom' },
+    { id: 'sparkle10', content: <span className="text-xl text-pink-400">✦</span>, className: 'top-[58%] left-[18%]', animType: 'drift' },
+    { id: 'sparkle11', content: <span className="text-lg text-pink-300">✦</span>, className: 'top-[72%] left-[35%]', animType: 'zoom' },
+    { id: 'sparkle12', content: <span className="text-xl text-pink-400">✦</span>, className: 'top-[78%] left-[70%]', animType: 'drift' },
+    { id: 'sparkle13', content: <span className="text-lg text-pink-300">✦</span>, className: 'top-[15%] left-[52%]', animType: 'zoom' },
+    { id: 'sparkle14', content: <span className="text-xl text-pink-400">✦</span>, className: 'top-[48%] left-[42%]', animType: 'drift' },
     
     // Small squares in various positions
     { id: 'square1', content: <span className="text-lg text-purple-400">■</span>, className: 'top-[22%] left-[35%]', animType: 'zoom' },
