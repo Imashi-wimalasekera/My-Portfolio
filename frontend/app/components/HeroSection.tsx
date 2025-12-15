@@ -1,44 +1,134 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 export default function HeroSection() {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-8">
-      {/* Decorative Icons */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 0.6, scale: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className="absolute top-32 left-1/4 text-purple-500"
-      >
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-        </svg>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 0.6, scale: 1 }}
-        transition={{ delay: 1.2, duration: 0.5 }}
-        className="absolute top-48 right-1/4 text-purple-500"
-      >
+  const floatingIcons = [
+    // Top row - evenly distributed
+    { id: 'star1', content: <span className="text-2xl text-yellow-300">★</span>, className: 'top-[10%] left-[8%]', animType: 'zoom' },
+    { id: 'dot1', content: <span className="text-3xl text-purple-300">•</span>, className: 'top-[15%] left-[25%]', animType: 'drift' },
+    { id: 'sparkle1', content: <span className="text-xl text-emerald-300">✦</span>, className: 'top-[8%] left-[42%]', animType: 'zoom' },
+    { id: 'diamond1', content: <span className="text-2xl text-fuchsia-300">◆</span>, className: 'top-[12%] left-[58%]', animType: 'drift' },
+    { id: 'star2', content: <span className="text-xl text-yellow-400">★</span>, className: 'top-[10%] left-[75%]', animType: 'zoom' },
+    { id: 'dot2', content: <span className="text-2xl text-blue-300">•</span>, className: 'top-[15%] left-[90%]', animType: 'drift' },
+    
+    // Upper-middle row
+    { id: 'sparkle2', content: <span className="text-2xl text-teal-300">✦</span>, className: 'top-[28%] left-[12%]', animType: 'drift' },
+    { id: 'brackets', content: <span className="text-3xl font-mono">&lt;/&gt;</span>, className: 'top-[30%] left-[55%] text-purple-400', animType: 'zoom' },
+    { id: 'star3', content: <span className="text-3xl text-amber-300">★</span>, className: 'top-[25%] left-[48%]', animType: 'drift' },
+    { id: 'dot3', content: <span className="text-4xl text-indigo-300">•</span>, className: 'top-[32%] left-[65%]', animType: 'zoom' },
+    { id: 'sparkle3', content: <span className="text-lg text-cyan-300">✦</span>, className: 'top-[28%] left-[82%]', animType: 'drift' },
+    
+    // Middle row
+    { id: 'diamond2', content: <span className="text-xl text-pink-300">◆</span>, className: 'top-[45%] left-[5%]', animType: 'zoom' },
+    { id: 'star4', content: <span className="text-lg text-yellow-200">★</span>, className: 'top-[50%] left-[20%]', animType: 'drift' },
+    { id: 'db', content: (
         <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
           <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
           <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
           <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" />
         </svg>
-      </motion.div>
+      ), className: 'top-[48%] left-[85%] text-blue-400', animType: 'zoom' },
+    { id: 'sparkle4', content: <span className="text-2xl text-emerald-400">✦</span>, className: 'top-[52%] right-[8%]', animType: 'drift' },
+    
+    // Lower-middle row
+    { id: 'dot4', content: <span className="text-3xl text-purple-400">•</span>, className: 'top-[65%] left-[10%]', animType: 'drift' },
+    { id: 'star5', content: <span className="text-2xl text-yellow-300">★</span>, className: 'top-[68%] left-[28%]', animType: 'zoom' },
+    { id: 'angle', content: (
+        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+        </svg>
+      ), className: 'top-[70%] left-[45%] text-indigo-400', animType: 'drift' },
+    { id: 'sparkle5', content: <span className="text-xl text-teal-400">✦</span>, className: 'top-[68%] left-[62%]', animType: 'zoom' },
+    { id: 'star6', content: <span className="text-xl text-amber-200">★</span>, className: 'top-[65%] left-[78%]', animType: 'drift' },
+    
+    // Bottom row
+    { id: 'star7', content: <span className="text-2xl text-yellow-400">★</span>, className: 'top-[85%] left-[15%]', animType: 'zoom' },
+    { id: 'sparkle6', content: <span className="text-lg text-cyan-400">✦</span>, className: 'top-[88%] left-[32%]', animType: 'drift' },
+    { id: 'react', content: (
+        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-cyan-300">
+          <circle cx="12" cy="12" r="2" fill="currentColor" />
+          <ellipse cx="12" cy="12" rx="11" ry="4.5" />
+          <ellipse cx="12" cy="12" rx="11" ry="4.5" transform="rotate(60 12 12)" />
+          <ellipse cx="12" cy="12" rx="11" ry="4.5" transform="rotate(120 12 12)" />
+        </svg>
+      ), className: 'top-[90%] left-[50%]', animType: 'zoom' },
+    { id: 'dot5', content: <span className="text-2xl text-blue-400">•</span>, className: 'top-[87%] left-[68%]', animType: 'drift' },
+    { id: 'star8', content: <span className="text-lg text-amber-400">★</span>, className: 'top-[85%] left-[85%]', animType: 'zoom' },
+    
+    // Additional scattered for fullness
+    { id: 'spark', content: (
+        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+        </svg>
+      ), className: 'top-[38%] left-[15%] text-purple-500', animType: 'drift' },
+    { id: 'figma', content: (
+        <svg className="w-10 h-10 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 2h4a4 4 0 010 8H8z" />
+          <path d="M8 10h4a4 4 0 010 8H8z" />
+          <path d="M8 2a4 4 0 000 8V2z" />
+          <path d="M12 2h4a4 4 0 010 8h-4z" />
+          <path d="M12 10a4 4 0 100 8 4 4 0 000-8z" />
+        </svg>
+      ), className: 'top-[55%] right-[12%]', animType: 'zoom' },
+    { id: 'dot6', content: <span className="text-4xl text-indigo-400">•</span>, className: 'top-[18%] right-[15%]', animType: 'drift' },
+    
+    // Additional sparkles and squares to fill empty spaces
+    { id: 'sparkle7', content: <span className="text-lg text-emerald-300">✦</span>, className: 'top-[20%] left-[18%]', animType: 'zoom' },
+    { id: 'sparkle8', content: <span className="text-xl text-teal-400">✦</span>, className: 'top-[35%] left-[38%]', animType: 'drift' },
+    { id: 'sparkle9', content: <span className="text-lg text-cyan-300">✦</span>, className: 'top-[42%] left-[60%]', animType: 'zoom' },
+    { id: 'sparkle10', content: <span className="text-xl text-emerald-400">✦</span>, className: 'top-[58%] left-[18%]', animType: 'drift' },
+    { id: 'sparkle11', content: <span className="text-lg text-teal-300">✦</span>, className: 'top-[72%] left-[35%]', animType: 'zoom' },
+    { id: 'sparkle12', content: <span className="text-xl text-cyan-400">✦</span>, className: 'top-[78%] left-[70%]', animType: 'drift' },
+    { id: 'sparkle13', content: <span className="text-lg text-emerald-300">✦</span>, className: 'top-[15%] left-[52%]', animType: 'zoom' },
+    { id: 'sparkle14', content: <span className="text-xl text-teal-400">✦</span>, className: 'top-[48%] left-[42%]', animType: 'drift' },
+    
+    // Small squares in various positions
+    { id: 'square1', content: <span className="text-lg text-purple-400">■</span>, className: 'top-[22%] left-[35%]', animType: 'zoom' },
+    { id: 'square2', content: <span className="text-base text-pink-400">■</span>, className: 'top-[38%] left-[52%]', animType: 'drift' },
+    { id: 'square3', content: <span className="text-lg text-blue-400">■</span>, className: 'top-[52%] left-[25%]', animType: 'zoom' },
+    { id: 'square4', content: <span className="text-base text-fuchsia-400">■</span>, className: 'top-[62%] left-[50%]', animType: 'drift' },
+    { id: 'square5', content: <span className="text-lg text-indigo-400">■</span>, className: 'top-[75%] left-[22%]', animType: 'zoom' },
+    { id: 'square6', content: <span className="text-base text-purple-300">■</span>, className: 'top-[82%] left-[58%]', animType: 'drift' },
+    { id: 'square7', content: <span className="text-lg text-pink-300">■</span>, className: 'top-[12%] left-[68%]', animType: 'zoom' },
+    { id: 'square8', content: <span className="text-base text-blue-300">■</span>, className: 'top-[45%] left-[72%]', animType: 'drift' },
+    { id: 'square9', content: <span className="text-lg text-fuchsia-300">■</span>, className: 'top-[55%] left-[8%]', animType: 'zoom' },
+    { id: 'square10', content: <span className="text-base text-indigo-300">■</span>, className: 'top-[32%] left-[88%]', animType: 'drift' },
+  ];
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 0.6, scale: 1 }}
-        transition={{ delay: 1.4, duration: 0.5 }}
-        className="absolute bottom-32 right-1/3 text-purple-500"
-      >
-        <span className="text-3xl font-mono">&lt;/&gt;</span>
-      </motion.div>
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-8">
+      {/* Background floating icons */}
+      <div className="absolute inset-0 pointer-events-none">
+        {floatingIcons.map((icon, index) => {
+          const isZoom = icon.animType === 'zoom';
+          return (
+            <motion.div
+              key={icon.id}
+              className={`absolute ${icon.className} opacity-30`}
+              animate={isZoom ? {
+                scale: [1, 1.4, 1],
+                rotate: [0, 180, 360],
+                opacity: [0.3, 0.6, 0.3],
+              } : {
+                x: [-40, 40, -35],
+                y: [0, -18, 6],
+                rotate: [0, 8, -8, 0],
+                scale: [1, 1.08, 0.95, 1],
+              }}
+              transition={{
+                duration: isZoom ? 4 + index * 0.3 : 6 + index * 0.4,
+                delay: index * 0.2,
+                repeat: Infinity,
+                repeatType: isZoom ? 'loop' : 'mirror',
+                ease: 'easeInOut',
+              }}
+            >
+              {icon.content}
+            </motion.div>
+          );
+        })}
+      </div>
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Text Content */}
@@ -150,43 +240,6 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative flex items-center justify-center"
         >
-          {/* Decorative Icons around the circle */}
-          <motion.div
-            animate={{ 
-              rotate: 360,
-              scale: [1, 1.05, 1]
-            }}
-            transition={{ 
-              rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-              scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-            }}
-            className="absolute inset-0"
-          >
-            <div className="absolute top-12 right-12 text-purple-500">
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-              </svg>
-            </div>
-
-            <div className="absolute bottom-16 left-8 text-blue-500">
-              <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
-                <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
-                <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" />
-              </svg>
-            </div>
-
-            <div className="absolute top-1/2 right-0 text-purple-400">
-              <span className="text-2xl font-mono">&lt;/&gt;</span>
-            </div>
-
-            <div className="absolute bottom-4 right-1/4 text-blue-400">
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </div>
-          </motion.div>
-
           {/* Main Circle with Image Placeholder */}
           <motion.div
             initial={{ scale: 0 }}
