@@ -97,7 +97,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-8">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 md:px-6">
       {/* Background floating icons */}
       <div className="absolute inset-0 pointer-events-none">
         {floatingIcons.map((icon, index) => {
