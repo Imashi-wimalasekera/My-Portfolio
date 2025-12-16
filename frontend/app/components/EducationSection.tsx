@@ -60,7 +60,7 @@ export default function EducationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-4xl md:text-5xl font-bold text-purple-300 mb-16"
+          className="text-center text-5xl md:text-6xl font-bold text-white mb-16"
         >
           Education
         </motion.h2>
@@ -79,13 +79,14 @@ export default function EducationSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 * index }}
-                className="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10"
+                whileHover={{ y: -5 }}
+                className="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 group"
               >
                 <div className="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-2 border-purple-400 bg-gray-900/70 flex items-center justify-center shadow-[0_0_25px_rgba(168,85,247,0.35)]">
                   <div className="w-4 h-4 rounded-full bg-purple-400" />
                 </div>
 
-                <div className={`w-full md:w-[48%] ${cardPosition} bg-gray-900/70 border border-purple-900 rounded-2xl p-6 md:p-8 shadow-xl shadow-purple-500/10 backdrop-blur`}
+                <div className={`w-full md:w-[48%] ${cardPosition} bg-gray-900/70 border border-purple-900 rounded-2xl p-6 md:p-8 shadow-xl shadow-purple-500/10 backdrop-blur transition-all duration-300 group-hover:bg-gray-900/90 group-hover:border-purple-500 group-hover:shadow-2xl group-hover:shadow-purple-500/30`}
                 >
                   <div className="flex flex-wrap items-center gap-3 mb-3">
                     <span className="text-sm px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/30">
