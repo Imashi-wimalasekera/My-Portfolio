@@ -5,23 +5,23 @@ import { motion } from 'framer-motion';
 export default function HeroSection() {
   const floatingIcons = [
     // Top row - evenly distributed
-    { id: 'star1', content: <span className="text-2xl text-yellow-300">★</span>, className: 'top-[10%] left-[8%]', animType: 'zoom' },
+    { id: 'star1', content: <span className="text-2xl text-purple-300">★</span>, className: 'top-[10%] left-[8%]', animType: 'zoom' },
     { id: 'dot1', content: <span className="text-3xl text-purple-300">•</span>, className: 'top-[15%] left-[25%]', animType: 'drift' },
     { id: 'sparkle1', content: <span className="text-xl text-purple-300">✦</span>, className: 'top-[8%] left-[42%]', animType: 'zoom' },
     { id: 'diamond1', content: <span className="text-2xl text-fuchsia-300">◆</span>, className: 'top-[12%] left-[58%]', animType: 'drift' },
-    { id: 'star2', content: <span className="text-xl text-yellow-400">★</span>, className: 'top-[10%] left-[75%]', animType: 'zoom' },
+    { id: 'star2', content: <span className="text-xl text-purple-400">★</span>, className: 'top-[10%] left-[75%]', animType: 'zoom' },
     { id: 'dot2', content: <span className="text-2xl text-blue-300">•</span>, className: 'top-[15%] left-[90%]', animType: 'drift' },
     
     // Upper-middle row
     { id: 'sparkle2', content: <span className="text-2xl text-purple-300">✦</span>, className: 'top-[28%] left-[12%]', animType: 'drift' },
     { id: 'brackets', content: <span className="text-3xl font-mono">&lt;/&gt;</span>, className: 'top-[30%] left-[55%] text-purple-400', animType: 'zoom' },
-    { id: 'star3', content: <span className="text-3xl text-amber-300">★</span>, className: 'top-[25%] left-[48%]', animType: 'drift' },
+    { id: 'star3', content: <span className="text-3xl text-pink-300">★</span>, className: 'top-[25%] left-[48%]', animType: 'drift' },
     { id: 'dot3', content: <span className="text-4xl text-indigo-300">•</span>, className: 'top-[32%] left-[65%]', animType: 'zoom' },
     { id: 'sparkle3', content: <span className="text-lg text-cyan-300">✦</span>, className: 'top-[28%] left-[82%]', animType: 'drift' },
     
     // Middle row
     { id: 'diamond2', content: <span className="text-xl text-pink-300">◆</span>, className: 'top-[45%] left-[5%]', animType: 'zoom' },
-    { id: 'star4', content: <span className="text-lg text-yellow-200">★</span>, className: 'top-[50%] left-[20%]', animType: 'drift' },
+    { id: 'star4', content: <span className="text-lg text-purple-200">★</span>, className: 'top-[50%] left-[20%]', animType: 'drift' },
     { id: 'db', content: (
         <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
           <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
@@ -33,17 +33,17 @@ export default function HeroSection() {
     
     // Lower-middle row
     { id: 'dot4', content: <span className="text-3xl text-purple-400">•</span>, className: 'top-[65%] left-[10%]', animType: 'drift' },
-    { id: 'star5', content: <span className="text-2xl text-yellow-300">★</span>, className: 'top-[68%] left-[28%]', animType: 'zoom' },
+    { id: 'star5', content: <span className="text-2xl text-purple-300">★</span>, className: 'top-[68%] left-[28%]', animType: 'zoom' },
     { id: 'angle', content: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
           <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
         </svg>
       ), className: 'top-[70%] left-[45%] text-indigo-400', animType: 'drift' },
     { id: 'sparkle5', content: <span className="text-xl text-purple-400">✦</span>, className: 'top-[68%] left-[62%]', animType: 'zoom' },
-    { id: 'star6', content: <span className="text-xl text-amber-200">★</span>, className: 'top-[65%] left-[78%]', animType: 'drift' },
+    { id: 'star6', content: <span className="text-xl text-pink-200">★</span>, className: 'top-[65%] left-[78%]', animType: 'drift' },
     
     // Bottom row
-    { id: 'star7', content: <span className="text-2xl text-yellow-400">★</span>, className: 'top-[85%] left-[15%]', animType: 'zoom' },
+    { id: 'star7', content: <span className="text-2xl text-purple-400">★</span>, className: 'top-[85%] left-[15%]', animType: 'zoom' },
     { id: 'sparkle6', content: <span className="text-lg text-purple-400">✦</span>, className: 'top-[88%] left-[32%]', animType: 'drift' },
     { id: 'react', content: (
         <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-cyan-300">
@@ -54,7 +54,7 @@ export default function HeroSection() {
         </svg>
       ), className: 'top-[90%] left-[50%]', animType: 'zoom' },
     { id: 'dot5', content: <span className="text-2xl text-blue-400">•</span>, className: 'top-[87%] left-[68%]', animType: 'drift' },
-    { id: 'star8', content: <span className="text-lg text-amber-400">★</span>, className: 'top-[85%] left-[85%]', animType: 'zoom' },
+    { id: 'star8', content: <span className="text-lg text-purple-400">★</span>, className: 'top-[85%] left-[85%]', animType: 'zoom' },
     
     // Additional scattered for fullness
     { id: 'spark', content: (

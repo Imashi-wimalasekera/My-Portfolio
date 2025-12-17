@@ -42,11 +42,11 @@ const skillCategories = [
     id: 'backend',
     title: 'Backend Development',
     skills: [
-      { name: 'Spring Boot', icon: SiSpringboot, color: 'text-green-500' },
-      { name: 'Node JS', icon: SiNodedotjs, color: 'text-green-500' },
-      { name: 'Express JS', icon: SiExpress, color: 'text-gray-300' },
-      { name: 'MongoDB', icon: SiMongodb, color: 'text-green-500' },
-      { name: 'MySQL', icon: SiMysql, color: 'text-blue-500' },
+      { name: 'Spring Boot', icon: SiSpringboot, color: 'text-green-500', isImage: false },
+      { name: 'Node JS', icon: SiNodedotjs, color: 'text-green-500', isImage: false },
+      { name: 'Express JS', icon: SiExpress, color: 'text-gray-300', isImage: false },
+      { name: 'MongoDB', icon: SiMongodb, color: 'text-green-500', isImage: false },
+      { name: 'MySQL', icon: null, color: 'text-blue-500', isImage: true, imageSrc: '/mysql-logo.svg' },
     ],
   },
   {
@@ -54,28 +54,28 @@ const skillCategories = [
     title: 'Mobile Development',
     skills: [
       { name: 'React Native', icon: FaReact, color: 'text-cyan-400', isImage: false },
-      { name: 'Flutter', icon: null, color: 'text-blue-400', isImage: true, imageSrc: '/flutter.jpg' },
+      { name: 'Flutter', icon: null, color: 'text-blue-400', isImage: true, imageSrc: '/Flutter_logo.svg.png' },
     ],
   },
   {
     id: 'languages',
     title: 'Programming Languages',
     skills: [
-      { name: 'C', icon: () => <span className="text-3xl font-bold">C</span>, color: 'text-blue-600' },
-      { name: 'Java', icon: FaJava, color: 'text-orange-500' },
-      { name: 'JavaScript', icon: () => <span className="text-3xl font-bold">JS</span>, color: 'text-yellow-400' },
-      { name: 'Python', icon: FaPython, color: 'text-blue-500' },
+      { name: 'C', icon: () => <span className="text-3xl font-bold">C</span>, color: 'text-blue-600', isImage: false },
+      { name: 'Java', icon: FaJava, color: 'text-orange-500', isImage: false },
+      { name: 'JavaScript', icon: () => <span className="text-3xl font-bold">JS</span>, color: 'text-yellow-400', isImage: false },
+      { name: 'Python', icon: null, color: 'text-blue-500', isImage: true, imageSrc: '/Python.png' },
     ],
   },
   {
     id: 'tools',
     title: 'Tools',
     skills: [
-      { name: 'Git', icon: FaGit, color: 'text-orange-600' },
-      { name: 'GitHub', icon: FaGithub, color: 'text-white' },
-      { name: 'Figma', icon: FaFigma, color: 'text-purple-500' },
-      { name: 'Postman', icon: SiPostman, color: 'text-orange-500' },
-      { name: 'Jira', icon: SiJira, color: 'text-blue-600' },
+      { name: 'Git', icon: null, color: 'text-orange-600', isImage: true, imageSrc: '/Git_icon.svg.png' },
+      { name: 'GitHub', icon: FaGithub, color: 'text-white', isImage: false },
+      { name: 'Figma', icon: FaFigma, color: 'text-purple-500', isImage: false },
+      { name: 'Postman', icon: SiPostman, color: 'text-orange-500', isImage: false },
+      { name: 'Jira', icon: SiJira, color: 'text-blue-600', isImage: false },
     ],
   },
 ];
@@ -132,7 +132,7 @@ export default function SkillsSection() {
                             alt={skill.name}
                             width={80}
                             height={80}
-                            className="w-full h-full object-contain p-2"
+                            className="w-11 h-11 object-contain"
                             priority
                           />
                         ) : (
