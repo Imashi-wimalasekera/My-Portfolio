@@ -60,7 +60,7 @@ export default function ProjectsSection() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           className="text-center text-5xl md:text-6xl font-bold text-white mb-16 flex items-center justify-center gap-3"
         >
           <span className="text-purple-400">&lt;/&gt;</span>
@@ -74,7 +74,7 @@ export default function ProjectsSection() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
+              transition={{ duration: 0.8, delay: 0.3 * index }}
               whileHover={{ y: -10 }}
               className="group"
             >

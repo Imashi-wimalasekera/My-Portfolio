@@ -43,10 +43,10 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">About Me</h2>
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">About</h2>
         </motion.div>
 
         {/* Description Paragraph */}
@@ -54,7 +54,7 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="text-center mb-16"
         >
           <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-4xl mx-auto">
