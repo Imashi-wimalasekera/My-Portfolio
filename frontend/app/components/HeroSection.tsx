@@ -7,13 +7,13 @@ export default function HeroSection() {
     // Top row - evenly distributed
     { id: 'star1', content: <span className="text-2xl text-yellow-300">★</span>, className: 'top-[10%] left-[8%]', animType: 'zoom' },
     { id: 'dot1', content: <span className="text-3xl text-purple-300">•</span>, className: 'top-[15%] left-[25%]', animType: 'drift' },
-    { id: 'sparkle1', content: <span className="text-xl text-emerald-300">✦</span>, className: 'top-[8%] left-[42%]', animType: 'zoom' },
+    { id: 'sparkle1', content: <span className="text-xl text-purple-300">✦</span>, className: 'top-[8%] left-[42%]', animType: 'zoom' },
     { id: 'diamond1', content: <span className="text-2xl text-fuchsia-300">◆</span>, className: 'top-[12%] left-[58%]', animType: 'drift' },
     { id: 'star2', content: <span className="text-xl text-yellow-400">★</span>, className: 'top-[10%] left-[75%]', animType: 'zoom' },
     { id: 'dot2', content: <span className="text-2xl text-blue-300">•</span>, className: 'top-[15%] left-[90%]', animType: 'drift' },
     
     // Upper-middle row
-    { id: 'sparkle2', content: <span className="text-2xl text-teal-300">✦</span>, className: 'top-[28%] left-[12%]', animType: 'drift' },
+    { id: 'sparkle2', content: <span className="text-2xl text-purple-300">✦</span>, className: 'top-[28%] left-[12%]', animType: 'drift' },
     { id: 'brackets', content: <span className="text-3xl font-mono">&lt;/&gt;</span>, className: 'top-[30%] left-[55%] text-purple-400', animType: 'zoom' },
     { id: 'star3', content: <span className="text-3xl text-amber-300">★</span>, className: 'top-[25%] left-[48%]', animType: 'drift' },
     { id: 'dot3', content: <span className="text-4xl text-indigo-300">•</span>, className: 'top-[32%] left-[65%]', animType: 'zoom' },
@@ -39,12 +39,12 @@ export default function HeroSection() {
           <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
         </svg>
       ), className: 'top-[70%] left-[45%] text-indigo-400', animType: 'drift' },
-    { id: 'sparkle5', content: <span className="text-xl text-teal-400">✦</span>, className: 'top-[68%] left-[62%]', animType: 'zoom' },
+    { id: 'sparkle5', content: <span className="text-xl text-purple-400">✦</span>, className: 'top-[68%] left-[62%]', animType: 'zoom' },
     { id: 'star6', content: <span className="text-xl text-amber-200">★</span>, className: 'top-[65%] left-[78%]', animType: 'drift' },
     
     // Bottom row
     { id: 'star7', content: <span className="text-2xl text-yellow-400">★</span>, className: 'top-[85%] left-[15%]', animType: 'zoom' },
-    { id: 'sparkle6', content: <span className="text-lg text-cyan-400">✦</span>, className: 'top-[88%] left-[32%]', animType: 'drift' },
+    { id: 'sparkle6', content: <span className="text-lg text-purple-400">✦</span>, className: 'top-[88%] left-[32%]', animType: 'drift' },
     { id: 'react', content: (
         <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-cyan-300">
           <circle cx="12" cy="12" r="2" fill="currentColor" />
