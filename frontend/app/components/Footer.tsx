@@ -4,24 +4,68 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from 'react-icons/fa';
-import { SiNextdotjs, SiReact, SiTypescript, SiTailwindcss } from 'react-icons/si';
+import { useState } from 'react';
+import { IconType } from 'react-icons';
+
+function MagneticLink({ href, children }: { href: string; children: React.ReactNode }) {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  return (
+    <motion.div
+      animate={{ x: position.x, y: position.y }}
+      transition={{ type: 'spring', stiffness: 150, damping: 15 }}
+      onMouseMove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        setPosition({ x: x * 0.3, y: y * 0.3 });
+      }}
+      onMouseLeave={() => setPosition({ x: 0, y: 0 })}
+    >
+      <Link
+        href={href}
+        className="text-slate-400 hover:text-purple-400 transition-colors text-sm"
+      >
+        {children}
+      </Link>
+    </motion.div>
+  );
+}
+
+function MagneticIcon({ icon: Icon, label, href }: { icon: IconType; label: string; href: string }) {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  return (
+    <motion.a
+      href={href}
+      animate={{ x: position.x, y: position.y }}
+      transition={{ type: 'spring', stiffness: 150, damping: 15 }}
+      onMouseMove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        setPosition({ x: x * 0.3, y: y * 0.3 });
+      }}
+      onMouseLeave={() => setPosition({ x: 0, y: 0 })}
+      whileTap={{ scale: 0.95 }}
+      className="w-10 h-10 rounded-full bg-gray-800 border border-purple-500/50 flex items-center justify-center hover:bg-purple-600 hover:border-purple-400 transition-all duration-300"
+      aria-label={label}
+    >
+      <Icon className="w-5 h-5 text-purple-400" />
+    </motion.a>
+  );
+}
 
 export default function Footer() {
   const quickLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Education', href: '#education' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
 
-  const technologies = [
-    { name: 'Next.js', icon: SiNextdotjs },
-    { name: 'React', icon: SiReact },
-    { name: 'TypeScript', icon: SiTypescript },
-    { name: 'Tailwind CSS', icon: SiTailwindcss },
-  ];
 
   return (
     <footer className="relative bg-gradient-to-b from-gray-900 via-purple-950 to-black border-t border-purple-900/50 px-2 md:px-4 py-12">
@@ -55,13 +99,9 @@ export default function Footer() {
             <h3 className="text-white font-bold text-lg mb-4">Quick Links</h3>
             <div className="grid grid-cols-2 gap-3">
               {quickLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-slate-400 hover:text-purple-400 transition-colors text-sm"
-                >
+                <MagneticLink key={link.name} href={link.href}>
                   {link.name}
-                </Link>
+                </MagneticLink>
               ))}
             </div>
           </div>
@@ -72,52 +112,9 @@ export default function Footer() {
             <div>
               <h3 className="text-white font-bold text-lg mb-4">Let&apos;s Connect</h3>
               <div className="flex gap-3">
-                <motion.a
-                  href="#"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-full bg-gray-800 border border-purple-500/50 flex items-center justify-center hover:bg-purple-600 hover:border-purple-400 transition-all duration-300"
-                  aria-label="GitHub"
-                >
-                  <FaGithub className="w-5 h-5 text-purple-400" />
-                </motion.a>
-                <motion.a
-                  href="#"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-full bg-gray-800 border border-purple-500/50 flex items-center justify-center hover:bg-purple-600 hover:border-purple-400 transition-all duration-300"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedin className="w-5 h-5 text-purple-400" />
-                </motion.a>
-                <motion.a
-                  href="#"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-full bg-gray-800 border border-purple-500/50 flex items-center justify-center hover:bg-purple-600 hover:border-purple-400 transition-all duration-300"
-                  aria-label="Email"
-                >
-                  <FaEnvelope className="w-5 h-5 text-purple-400" />
-                </motion.a>
-              </div>
-            </div>
-
-            {/* Built With */}
-            <div>
-              <p className="text-slate-400 text-sm mb-3">Built with</p>
-              <div className="flex flex-wrap gap-3">
-                {technologies.map((tech) => {
-                  const Icon = tech.icon;
-                  return (
-                    <div
-                      key={tech.name}
-                      className="flex items-center gap-1.5 text-slate-400 text-xs"
-                    >
-                      <Icon className="text-purple-400" />
-                      <span>{tech.name}</span>
-                    </div>
-                  );
-                })}
+                <MagneticIcon icon={FaEnvelope} label="Email" href="#" />
+                <MagneticIcon icon={FaGithub} label="GitHub" href="#" />
+                <MagneticIcon icon={FaLinkedin} label="LinkedIn" href="#" />
               </div>
             </div>
           </div>
