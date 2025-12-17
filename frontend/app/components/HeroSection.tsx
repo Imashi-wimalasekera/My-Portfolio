@@ -45,14 +45,6 @@ export default function HeroSection() {
     // Bottom row
     { id: 'star7', content: <span className="text-2xl text-purple-400">★</span>, className: 'top-[85%] left-[15%]', animType: 'zoom' },
     { id: 'sparkle6', content: <span className="text-lg text-purple-400">✦</span>, className: 'top-[88%] left-[32%]', animType: 'drift' },
-    { id: 'react', content: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-cyan-300">
-          <circle cx="12" cy="12" r="2" fill="currentColor" />
-          <ellipse cx="12" cy="12" rx="11" ry="4.5" />
-          <ellipse cx="12" cy="12" rx="11" ry="4.5" transform="rotate(60 12 12)" />
-          <ellipse cx="12" cy="12" rx="11" ry="4.5" transform="rotate(120 12 12)" />
-        </svg>
-      ), className: 'top-[90%] left-[50%]', animType: 'zoom' },
     { id: 'dot5', content: <span className="text-2xl text-blue-400">•</span>, className: 'top-[87%] left-[68%]', animType: 'drift' },
     { id: 'star8', content: <span className="text-lg text-purple-400">★</span>, className: 'top-[85%] left-[85%]', animType: 'zoom' },
     
@@ -98,6 +90,8 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 md:px-6">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-purple-950 to-black opacity-70 pointer-events-none" aria-hidden />
       {/* Background floating icons */}
       <div className="absolute inset-0 pointer-events-none">
         {floatingIcons.map((icon, index) => {
@@ -130,7 +124,7 @@ export default function HeroSection() {
         })}
       </div>
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Text Content */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}

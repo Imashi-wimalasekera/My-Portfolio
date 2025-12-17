@@ -7,8 +7,6 @@ import {
   FaCss3Alt,
   FaReact,
   FaJava,
-  FaPython,
-  FaGit,
   FaGithub,
   FaFigma,
 } from 'react-icons/fa';
@@ -20,7 +18,6 @@ import {
   SiNodedotjs,
   SiExpress,
   SiMongodb,
-  SiMysql,
   SiPostman,
   SiJira,
 } from 'react-icons/si';
@@ -30,12 +27,12 @@ const skillCategories = [
     id: 'frontend',
     title: 'Frontend Development',
     skills: [
-      { name: 'HTML', icon: FaHtml5, color: 'text-orange-500' },
-      { name: 'CSS', icon: FaCss3Alt, color: 'text-blue-500' },
-      { name: 'React', icon: FaReact, color: 'text-cyan-400' },
-      { name: 'Next JS', icon: SiNextdotjs, color: 'text-white' },
-      { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-400' },
-      { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-600' },
+      { name: 'HTML', icon: FaHtml5, color: 'text-orange-500', isImage: false },
+      { name: 'CSS', icon: FaCss3Alt, color: 'text-blue-500', isImage: false },
+      { name: 'React', icon: FaReact, color: 'text-cyan-400', isImage: false },
+      { name: 'Next JS', icon: SiNextdotjs, color: 'text-white', isImage: false },
+      { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-400', isImage: false },
+      { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-600', isImage: false },
     ],
   },
   {
@@ -135,9 +132,9 @@ export default function SkillsSection() {
                             className="w-11 h-11 object-contain"
                             priority
                           />
-                        ) : (
+                        ) : IconComponent ? (
                           <IconComponent className={`text-4xl ${skill.color}`} />
-                        )}
+                        ) : null}
                       </div>
                       <p className="text-sm text-slate-300 font-semibold text-center whitespace-nowrap group-hover:text-purple-300 transition-colors">
                         {skill.name}
