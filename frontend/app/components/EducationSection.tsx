@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const educationItems = [
   {
@@ -13,39 +14,39 @@ const educationItems = [
     summary:
       'Currently pursuing a Bachelor’s degree in Information Technology with a strong academic foundation and hands-on experience in software development and modern web technologies.',
     badge: 'Undergraduate',
+    logo: '/uni logo.png',
   },
   {
     id: 'dnc',
     title: 'Dhammissara National College',
-    school: 'G.C.E. Advanced Level (Biology Stream)',
+    school: 'G.C.E. Advanced Level',
     period: '2021',
     gradeLabel: 'Results',
     gradeValue: 'Physics – A | Chemistry – B | Biology – C',
     summary:
       'Completed Advanced Level studies in the Biology stream, developing strong analytical thinking and a solid foundation in science subjects.',
     badge: 'Biology Stream',
+    logo: '/scl logo.webp',
   },
   {
     id: 'dnc-ol',
     title: 'Dhammissara National College',
     school: 'G.C.E. Ordinary Level',
-    period: 'Completed',
     gradeLabel: 'Results',
     gradeValue: "9 A's",
     summary:
       "Successfully completed the G.C.E. Ordinary Level examination with strong performance across a broad range of subjects, establishing a solid academic foundation for advanced studies.",
-    badge: 'Ordinary Level',
+     logo: '/scl logo.webp',
   },
   {
     id: 'tech-college',
     title: 'Technical College – Kuliyapitiya',
     school: 'National Certificate in Engineering Draughtsmanship',
-    period: '2022',
     gradeLabel: 'NVQ Level',
     gradeValue: '4 (Completed Levels 3 & 4)',
     summary:
       'Completed vocational training in engineering draughtsmanship, gaining practical skills in technical drawing, design interpretation, and precision-based work.',
-    badge: 'NVQ Level 4',
+    logo: '/tec logo.jpg',
   },
 ];
 
@@ -78,7 +79,7 @@ export default function EducationSection() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.15 * index }}
+                transition={{ duration: 0.6, delay: 0.25 * index }}
                 whileHover={{ y: -5 }}
                 className="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 group"
               >
@@ -88,14 +89,34 @@ export default function EducationSection() {
 
                 <div className={`w-full md:w-[48%] ${cardPosition} bg-gray-900/70 border border-purple-900 rounded-2xl p-6 md:p-8 shadow-xl shadow-purple-500/10 backdrop-blur transition-all duration-300 group-hover:bg-gray-900/90 group-hover:border-purple-500 group-hover:shadow-2xl group-hover:shadow-purple-500/30`}
                 >
+                  {item.logo ? (
+                    <div className="flex gap-4 items-start mb-4">
+                      <Image
+                        src={item.logo}
+                        alt={`${item.title} logo`}
+                        width={70}
+                        height={90}
+                        className="w-16 h-16 flex-shrink-0"
+                      />
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-semibold text-white mb-1">{item.title}</h3>
+                        <p className="text-lg text-slate-200 mb-2">{item.school}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <h3 className="text-2xl font-semibold text-white mb-1">{item.title}</h3>
+                      <p className="text-lg text-slate-200 mb-2">{item.school}</p>
+                    </>
+                  )}
                   <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <span className="text-sm px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/30">
-                      {item.badge}
-                    </span>
+                    {item.badge && (
+                      <span className="text-sm px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/30">
+                        {item.badge}
+                      </span>
+                    )}
                     <span className="text-sm text-slate-300">{item.period}</span>
                   </div>
-                  <h3 className="text-2xl font-semibold text-white mb-1">{item.title}</h3>
-                  <p className="text-lg text-slate-200 mb-2">{item.school}</p>
                   <p className="text-sm text-purple-300 font-semibold mb-4">
                     {item.gradeLabel}: {item.gradeValue}
                   </p>

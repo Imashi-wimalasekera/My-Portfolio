@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import EducationSection from './components/EducationSection';
+import SkillsSection from './components/SkillsSection';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <EducationSection />
+        <SkillsSection />
       </main>
     </div>
   );
