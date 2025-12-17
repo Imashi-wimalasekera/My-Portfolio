@@ -53,8 +53,8 @@ const skillCategories = [
     id: 'mobile',
     title: 'Mobile Development',
     skills: [
-      { name: 'React Native', icon: FaReact, color: 'text-cyan-400' },
-      { name: 'Flutter', icon: () => <span className="text-3xl font-bold text-blue-400">F</span>, color: 'text-blue-400' },
+      { name: 'React Native', icon: FaReact, color: 'text-cyan-400', isImage: false },
+      { name: 'Flutter', icon: null, color: 'text-blue-400', isImage: true, imageSrc: '/flutter.jpg' },
     ],
   },
   {
@@ -126,7 +126,18 @@ export default function SkillsSection() {
                       className="group flex flex-col items-center gap-3"
                     >
                       <div className="relative flex items-center justify-center w-20 h-20 rounded-xl bg-gradient-to-br from-purple-600/20 to-purple-800/20 border border-purple-500/30 shadow-lg shadow-purple-500/10 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-purple-600/40 group-hover:to-purple-800/40 group-hover:border-purple-400 group-hover:shadow-purple-500/50">
-                        <IconComponent className={`text-4xl ${skill.color}`} />
+                        {skill.isImage && skill.imageSrc ? (
+                          <Image
+                            src={skill.imageSrc}
+                            alt={skill.name}
+                            width={80}
+                            height={80}
+                            className="w-full h-full object-contain p-2"
+                            priority
+                          />
+                        ) : (
+                          <IconComponent className={`text-4xl ${skill.color}`} />
+                        )}
                       </div>
                       <p className="text-sm text-slate-300 font-semibold text-center whitespace-nowrap group-hover:text-purple-300 transition-colors">
                         {skill.name}
