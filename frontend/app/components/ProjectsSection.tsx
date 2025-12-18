@@ -136,10 +136,21 @@ export default function ProjectsSection() {
               whileHover={{ y: -10 }}
               className="group"
             >
-              <div className="relative bg-gray-900/70 border border-purple-900 rounded-2xl p-6 shadow-xl shadow-purple-500/10 backdrop-blur transition-all duration-300 group-hover:bg-gray-900/90 group-hover:border-purple-500 group-hover:shadow-2xl group-hover:shadow-purple-500/30 h-full flex flex-col">
+              <div
+                className="relative bg-gray-900/70 border border-purple-900 rounded-2xl p-6 shadow-xl shadow-purple-500/10 backdrop-blur transition-all duration-300 group-hover:bg-gray-900/90 group-hover:border-purple-500 group-hover:shadow-2xl group-hover:shadow-purple-500/30 h-full flex flex-col cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+                onClick={() => setActiveProject(project)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setActiveProject(project);
+                  }
+                }}
+              >
                 {/* Header */}
                 <div className="mb-4">
-                  <h3 className="text-3xl font-bold text-white mb-2">{project.title}</h3>
+                  <h3 className="text-3xl font-bold text-white mb-3">{project.title}</h3>
                   <p className="text-base text-slate-400">{project.description}</p>
                 </div>
 
@@ -157,9 +168,8 @@ export default function ProjectsSection() {
 
                 {/* Badge and Image */}
                 <div className="flex-1 relative mb-4">
-                  <div className="absolute top-3 left-3 z-10 bg-purple-600 text-white px-4 py-2 rounded-lg shadow-lg">
-                    <p className="font-bold text-sm">{project.badge}</p>
-                    <p className="text-xs text-purple-200">{project.year}</p>
+                  <div className="absolute top-3 right-3 z-10 bg-purple-600/70 text-white px-3 py-1 rounded-md shadow-md backdrop-blur-sm">
+                    <p className="font-semibold text-xs">{project.badge}</p>
                   </div>
                   <div className="relative w-full h-48 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg overflow-hidden flex items-center justify-center">
                     {project.image && project.image !== '/placeholder-project.jpg' ? (
@@ -177,15 +187,6 @@ export default function ProjectsSection() {
                   </div>
                 </div>
 
-                {/* Action Button */}
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setActiveProject(project)}
-                  className="w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-lg font-semibold hover:from-purple-500 hover:to-purple-700 transition-all duration-300 border border-purple-500/50"
-                >
-                  View Project
-                </motion.button>
               </div>
             </motion.div>
           ))}
