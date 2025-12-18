@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function HeroSection() {
   const floatingIcons = [
@@ -246,27 +247,13 @@ export default function HeroSection() {
             
             {/* Image Container */}
             <div className="absolute inset-4 rounded-full overflow-hidden bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
-              {/* Placeholder for user image */}
-              <div className="w-full h-full bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <svg 
-                    className="w-32 h-32 mx-auto mb-4 opacity-50" 
-                    fill="currentColor" 
-                    viewBox="0 0 20 20"
-                  >
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                  </svg>
-                  <p className="text-sm opacity-70">Your Photo Here</p>
-                </div>
-              </div>
-              {/* Uncomment and use this when you add your image */}
-              {/* <Image
-                src="/your-photo.jpg"
-                alt="Your Name"
+              <Image
+                src="/imashi.jpeg"
+                alt="Imashi Wimalasekera"
                 fill
-                className="object-cover"
+                className="object-cover object-top scale-110"
                 priority
-              /> */}
+              />
             </div>
 
             {/* Code brackets decoration at bottom */}

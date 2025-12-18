@@ -119,9 +119,8 @@ export default function ProjectsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center text-5xl md:text-6xl font-bold text-white mb-16 flex items-center justify-center gap-3"
+          className="text-center text-5xl md:text-6xl font-bold text-white mb-16"
         >
-          <span className="text-purple-400">&lt;/&gt;</span>
           Projects
         </motion.h2>
 
