@@ -77,21 +77,14 @@ export default function Footer() {
               <Image 
                 src="/logo 6.png" 
                 alt="Logo" 
-                width={60} 
-                height={60}
-                className="w-12 h-12"
+                width={100} 
+                height={100}
+                className="w-20 h-20"
               />
-              <span className="text-purple-400 text-xl font-bold">Imashi</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
               Where imagination meets logic, and ideas take form. Forever learning, forever evolving.
             </p>
-            <div className="flex items-center gap-2 text-slate-400 text-sm">
-              <span>Made with</span>
-              <FaHeart className="text-red-500 text-xs" />
-              <span>and lots of</span>
-              <span className="text-lg">☕</span>
-            </div>
           </div>
 
           {/* Middle Section - Quick Links */}
@@ -112,9 +105,9 @@ export default function Footer() {
             <div>
               <h3 className="text-white font-bold text-lg mb-4">Let&apos;s Connect</h3>
               <div className="flex gap-3">
-                <MagneticIcon icon={FaEnvelope} label="Email" href="#" />
-                <MagneticIcon icon={FaGithub} label="GitHub" href="#" />
-                <MagneticIcon icon={FaLinkedin} label="LinkedIn" href="#" />
+                <MagneticIcon icon={FaEnvelope} label="Email" href="mailto:imashi0815@gmail.com" />
+                <MagneticIcon icon={FaGithub} label="GitHub" href="https://github.com/Imashi-wimalasekera" />
+                <MagneticIcon icon={FaLinkedin} label="LinkedIn" href="https://www.linkedin.com/in/imashi-wimalasekera" />
               </div>
             </div>
           </div>

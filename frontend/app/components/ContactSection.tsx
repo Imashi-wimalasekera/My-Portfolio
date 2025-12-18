@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,12 @@ export default function ContactSection() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init('7vyVmG_Lur63TyNWT');
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -24,11 +31,29 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Handle form submission here
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setSubmitMessage('');
+
+    try {
+      await emailjs.send(
+        'service_wpjf9z7',      
+        'template_b6z3p8e',         
+        {
+          to_email: 'imashi0815@gmail.com', 
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          reply_to: formData.email,
+        }
+      );
+
+      setSubmitMessage('✓ Message sent successfully! I\'ll get back to you soon.');
       setFormData({ name: '', email: '', message: '' });
-    }, 1000);
+    } catch (error) {
+      setSubmitMessage('✗ Failed to send message. Please try again or email me directly.');
+      console.error('EmailJS Error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -100,7 +125,9 @@ export default function ContactSection() {
               <p className="text-slate-300 font-semibold mb-4">Find me on</p>
               <div className="flex gap-4">
                 <motion.a
-                  href="#"
+                  href="https://www.linkedin.com/in/imashi-wimalasekera"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-12 h-12 rounded-full bg-gray-800 border border-purple-500/50 flex items-center justify-center hover:bg-purple-600 hover:border-purple-400 transition-all duration-300"
@@ -109,7 +136,9 @@ export default function ContactSection() {
                   <FaLinkedin className="w-5 h-5 text-purple-400" />
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href="https://github.com/Imashi-wimalasekera"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-12 h-12 rounded-full bg-gray-800 border border-purple-500/50 flex items-center justify-center hover:bg-purple-600 hover:border-purple-400 transition-all duration-300"
@@ -118,7 +147,7 @@ export default function ContactSection() {
                   <FaGithub className="w-5 h-5 text-purple-400" />
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href="mailto:imashi0815@gmail.com"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-12 h-12 rounded-full bg-gray-800 border border-purple-500/50 flex items-center justify-center hover:bg-purple-600 hover:border-purple-400 transition-all duration-300"
@@ -143,6 +172,17 @@ export default function ContactSection() {
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Feel free to reach out using the form below for collaborations, project discussions, or any inquiries. I&apos;ll get back to you as soon as possible.
               </p>
+
+              {/* Success/Error Message */}
+              {submitMessage && (
+                <div className={`p-3 rounded-lg text-sm font-semibold mb-4 ${
+                  submitMessage.includes('✓') 
+                    ? 'bg-green-500/20 border border-green-500/50 text-green-400' 
+                    : 'bg-red-500/20 border border-red-500/50 text-red-400'
+                }`}>
+                  {submitMessage}
+                </div>
+              )}
               
               {/* Name Field */}
               <div>
