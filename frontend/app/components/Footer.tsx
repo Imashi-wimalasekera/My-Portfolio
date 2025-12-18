@@ -77,21 +77,14 @@ export default function Footer() {
               <Image 
                 src="/logo 6.png" 
                 alt="Logo" 
-                width={60} 
-                height={60}
-                className="w-12 h-12"
+                width={100} 
+                height={100}
+                className="w-20 h-20"
               />
-              <span className="text-purple-400 text-xl font-bold">Imashi</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
               Where imagination meets logic, and ideas take form. Forever learning, forever evolving.
             </p>
-            <div className="flex items-center gap-2 text-slate-400 text-sm">
-              <span>Made with</span>
-              <FaHeart className="text-red-500 text-xs" />
-              <span>and lots of</span>
-              <span className="text-lg">☕</span>
-            </div>
           </div>
 
           {/* Middle Section - Quick Links */}
