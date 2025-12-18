@@ -125,7 +125,9 @@ export default function ContactSection() {
               <p className="text-slate-300 font-semibold mb-4">Find me on</p>
               <div className="flex gap-4">
                 <motion.a
-                  href="#"
+                  href="https://www.linkedin.com/in/imashi-wimalasekera"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-12 h-12 rounded-full bg-gray-800 border border-purple-500/50 flex items-center justify-center hover:bg-purple-600 hover:border-purple-400 transition-all duration-300"
@@ -134,7 +136,9 @@ export default function ContactSection() {
                   <FaLinkedin className="w-5 h-5 text-purple-400" />
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href="https://github.com/Imashi-wimalasekera"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-12 h-12 rounded-full bg-gray-800 border border-purple-500/50 flex items-center justify-center hover:bg-purple-600 hover:border-purple-400 transition-all duration-300"
@@ -143,7 +147,7 @@ export default function ContactSection() {
                   <FaGithub className="w-5 h-5 text-purple-400" />
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href="mailto:imashi0815@gmail.com"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-12 h-12 rounded-full bg-gray-800 border border-purple-500/50 flex items-center justify-center hover:bg-purple-600 hover:border-purple-400 transition-all duration-300"

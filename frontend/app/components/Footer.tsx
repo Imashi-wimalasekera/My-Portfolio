@@ -105,9 +105,9 @@ export default function Footer() {
             <div>
               <h3 className="text-white font-bold text-lg mb-4">Let&apos;s Connect</h3>
               <div className="flex gap-3">
-                <MagneticIcon icon={FaEnvelope} label="Email" href="#" />
-                <MagneticIcon icon={FaGithub} label="GitHub" href="#" />
-                <MagneticIcon icon={FaLinkedin} label="LinkedIn" href="#" />
+                <MagneticIcon icon={FaEnvelope} label="Email" href="mailto:imashi0815@gmail.com" />
+                <MagneticIcon icon={FaGithub} label="GitHub" href="https://github.com/Imashi-wimalasekera" />
+                <MagneticIcon icon={FaLinkedin} label="LinkedIn" href="https://www.linkedin.com/in/imashi-wimalasekera" />
               </div>
             </div>
           </div>
