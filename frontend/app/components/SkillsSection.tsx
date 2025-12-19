@@ -86,7 +86,7 @@ export default function SkillsSection() {
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.35 }}
           transition={{ duration: 0.6 }}
           className="text-center text-5xl md:text-6xl font-bold text-white mb-20"
         >
@@ -99,7 +99,7 @@ export default function SkillsSection() {
               key={category.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.1 * catIndex }}
             >
               <h3 className="text-2xl md:text-3xl font-bold text-slate-400 mb-8 text-center">
@@ -114,7 +114,7 @@ export default function SkillsSection() {
                       key={skill.name}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
+                      viewport={{ once: false, amount: 0.2 }}
                       transition={{
                         duration: 0.4,
                         delay: 0.1 * catIndex + 0.05 * skillIndex,
