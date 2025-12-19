@@ -90,7 +90,7 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-lg font-semibold text-white">071 - 7425987</p>
+                  <p className="text-lg font-semibold text-white">+94 71 - 7425987</p>
                 </div>
               </div>
 
