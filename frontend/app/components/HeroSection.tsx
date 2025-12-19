@@ -113,7 +113,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 md:px-6">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-purple-950 to-black opacity-70 pointer-events-none" aria-hidden />
+      <div className="absolute inset-0 bg-linear-to-b from-gray-900 via-purple-950 to-black opacity-70 pointer-events-none" aria-hidden />
       {/* Background floating icons */}
       <div className="absolute inset-0 pointer-events-none">
         {floatingIcons.map((icon, index) => {

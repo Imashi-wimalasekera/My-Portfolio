@@ -58,7 +58,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="relative min-h-screen px-4 md:px-6 py-20 overflow-hidden flex items-center">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-purple-950 to-black opacity-70" aria-hidden />
+      <div className="absolute inset-0 bg-linear-to-b from-gray-900 via-purple-950 to-black opacity-70" aria-hidden />
 
       <div className="relative max-w-6xl mx-auto w-full">
         <motion.h2
@@ -232,7 +232,7 @@ export default function ContactSection() {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-full font-semibold hover:from-purple-500 hover:to-purple-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-3 bg-linear-to-r from-purple-600 to-purple-800 text-white rounded-full font-semibold hover:from-purple-500 hover:to-purple-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </motion.button>

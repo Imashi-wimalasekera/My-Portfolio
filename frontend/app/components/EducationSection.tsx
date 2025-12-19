@@ -53,7 +53,7 @@ const educationItems = [
 export default function EducationSection() {
   return (
     <section id="education" className="relative min-h-screen px-4 md:px-6 py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-purple-950 to-black opacity-70" aria-hidden />
+      <div className="absolute inset-0 bg-linear-to-b from-gray-900 via-purple-950 to-black opacity-70" aria-hidden />
 
       <div className="relative max-w-6xl mx-auto">
         <motion.h2
@@ -67,7 +67,7 @@ export default function EducationSection() {
         </motion.h2>
 
         <div className="relative">
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 via-fuchsia-500 to-transparent rounded-full" aria-hidden />
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-linear-to-b from-purple-500 via-fuchsia-500 to-transparent rounded-full" aria-hidden />
 
           <div className="space-y-14">
             {educationItems.map((item, index) => {
@@ -96,7 +96,7 @@ export default function EducationSection() {
                         alt={`${item.title} logo`}
                         width={70}
                         height={90}
-                        className="w-16 h-16 flex-shrink-0"
+                        className="w-16 h-16 shrink-0"
                       />
                       <div className="flex-1">
                         <h3 className="text-2xl font-semibold text-white mb-1">{item.title}</h3>
