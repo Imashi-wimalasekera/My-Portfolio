@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: "Imashi Wimalasekera",
   description: "Personal portfolio of Imashi Wimalasekera",
   viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+   icons: {
+    icon: "/logo 6.png",
+    shortcut: "/logo 6.png",
+    apple: "/logo 6.png",
+  },
 };
 
 export default function RootLayout({
