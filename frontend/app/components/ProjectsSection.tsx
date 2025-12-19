@@ -33,7 +33,7 @@ const projects = [
     details: 'This personal portfolio website was built to showcase my projects, technical skills, and academic background through a clean and modern design. Developed using modern frontend technologies, it features well-structured sections such as About Me, Projects, Education, and Contact, ensuring smooth navigation and responsiveness across devices. The project highlights my attention to detail, design sensibility, and ability to create clean, maintainable, and professional frontend applications.',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS',],
     badge: 'Individual Project',
-    image: '/placeholder-project.jpg',
+    image: '/portfolio.png',
     features: [
       'Responsive design optimized for mobile, tablet, and desktop',
       'Dedicated sections for projects, education, and contact information',
