@@ -48,7 +48,7 @@ export default function AboutSection() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
@@ -59,7 +59,7 @@ export default function AboutSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-center mb-16"
         >
@@ -79,7 +79,7 @@ export default function AboutSection() {
               key={feature.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.25 }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
               whileHover={{ y: -5 }}
               className="relative group"

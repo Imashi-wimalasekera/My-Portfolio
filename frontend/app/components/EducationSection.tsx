@@ -59,7 +59,7 @@ export default function EducationSection() {
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.35 }}
           transition={{ duration: 0.6 }}
           className="text-center text-5xl md:text-6xl font-bold text-white mb-16"
         >
@@ -78,7 +78,7 @@ export default function EducationSection() {
                 key={item.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.35 }}
                 transition={{ duration: 0.6, delay: 0.25 * index }}
                 whileHover={{ y: -5 }}
                 className="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 group"
