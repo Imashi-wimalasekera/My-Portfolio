@@ -111,7 +111,7 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects" className="relative min-h-screen px-4 md:px-6 py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-purple-950 to-black opacity-70" aria-hidden />
+      <div className="absolute inset-0 bg-linear-to-b from-gray-900 via-purple-950 to-black opacity-70" aria-hidden />
 
       <div className="relative max-w-6xl mx-auto">
         <motion.h2
@@ -170,7 +170,7 @@ export default function ProjectsSection() {
                   <div className="absolute top-3 right-3 z-10 bg-purple-600/70 text-white px-3 py-1 rounded-md shadow-md backdrop-blur-sm">
                     <p className="font-semibold text-xs">{project.badge}</p>
                   </div>
-                  <div className="relative w-full h-48 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg overflow-hidden flex items-center justify-center">
+                  <div className="relative w-full h-48 bg-linear-to-br from-purple-500 to-indigo-600 rounded-lg overflow-hidden flex items-center justify-center">
                     {project.image && project.image !== '/placeholder-project.jpg' ? (
                       <Image
                         src={project.image}
@@ -211,7 +211,7 @@ export default function ProjectsSection() {
                 className="relative max-w-7xl w-full bg-gray-900/90 border border-purple-800 rounded-3xl shadow-2xl shadow-purple-500/20 overflow-hidden"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                  <div className="relative h-full min-h-[500px] bg-gradient-to-br from-purple-600 to-indigo-700 overflow-hidden flex items-center justify-center">
+                  <div className="relative h-full min-h-125 bg-linear-to-br from-purple-600 to-indigo-700 overflow-hidden flex items-center justify-center">
                     {activeProject.image && activeProject.image !== '/placeholder-project.jpg' ? (
                       <>
                         <Image
@@ -226,9 +226,9 @@ export default function ProjectsSection() {
                         <div className="absolute inset-0 bg-black/10" />
                       </>
                     ) : (
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-indigo-700" />
+                      <div className="absolute inset-0 bg-linear-to-br from-purple-600 to-indigo-700" />
                     )}
-                    <div className="absolute inset-0 p-6 text-white flex flex-col justify-end bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                    <div className="absolute inset-0 p-6 text-white flex flex-col justify-end bg-linear-to-t from-black/60 via-transparent to-transparent">
                       <p className="text-sm text-purple-200 mb-2">{activeProject.year}</p>
                       <h3 className="text-3xl font-bold leading-tight mb-3">{activeProject.title}</h3>
                       <p className="text-sm text-purple-100">{activeProject.badge}</p>

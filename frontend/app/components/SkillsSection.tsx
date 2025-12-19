@@ -80,7 +80,7 @@ const skillCategories = [
 export default function SkillsSection() {
   return (
     <section id="skills" className="relative min-h-screen flex items-center justify-center px-4 md:px-6 py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-purple-950 to-black opacity-70" aria-hidden />
+      <div className="absolute inset-0 bg-linear-to-b from-gray-900 via-purple-950 to-black opacity-70" aria-hidden />
 
       <div className="relative max-w-6xl mx-auto w-full">
         <motion.h2
@@ -122,7 +122,7 @@ export default function SkillsSection() {
                       whileHover={{ scale: 1.15, y: -8 }}
                       className="group flex flex-col items-center gap-3"
                     >
-                      <div className="relative flex items-center justify-center w-20 h-20 rounded-xl bg-gradient-to-br from-purple-600/20 to-purple-800/20 border border-purple-500/30 shadow-lg shadow-purple-500/10 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-purple-600/40 group-hover:to-purple-800/40 group-hover:border-purple-400 group-hover:shadow-purple-500/50">
+                      <div className="relative flex items-center justify-center w-20 h-20 rounded-xl bg-linear-to-br from-purple-600/20 to-purple-800/20 border border-purple-500/30 shadow-lg shadow-purple-500/10 transition-all duration-300 group-hover:bg-linear-to-br group-hover:from-purple-600/40 group-hover:to-purple-800/40 group-hover:border-purple-400 group-hover:shadow-purple-500/50">
                         {skill.isImage && skill.imageSrc ? (
                           <Image
                             src={skill.imageSrc}

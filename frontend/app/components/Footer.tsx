@@ -68,7 +68,7 @@ export default function Footer() {
 
 
   return (
-    <footer className="relative bg-gradient-to-b from-gray-900 via-purple-950 to-black border-t border-purple-900/50 px-2 md:px-4 py-12">
+    <footer className="relative bg-linear-to-b from-gray-900 via-purple-950 to-black border-t border-purple-900/50 px-2 md:px-4 py-12">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
           {/* Left Section - Logo & Description */}
