@@ -39,17 +39,17 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="fixed top-0 left-0 right-0 z-50 px-4 pt-2 pb-6"
+      className="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md shadow-lg border-b border-gray-800/50"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image 
             src="/logo 6.png" 
             alt="Logo" 
-            width={120} 
-            height={120}
-            className="w-24 h-24"
+            width={90} 
+            height={90}
+            className="w-18 h-18"
           />
         </Link>
 
@@ -59,7 +59,7 @@ export default function Navbar() {
             <li key={item}>
               <Link 
                 href={`#${item.toLowerCase()}`}
-                className={`text-base font-medium transition-colors relative ${
+                className={`text-lg font-medium transition-colors relative ${
                   activeSection === item ? 'text-purple-500' : 'text-gray-300 hover:text-purple-400'
                 }`}
               >

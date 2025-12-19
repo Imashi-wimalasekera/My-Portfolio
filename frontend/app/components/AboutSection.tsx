@@ -11,7 +11,9 @@ export default function AboutSection() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
-      title: 'Full-stack Development'
+      title: 'Full-stack Development',
+      description:
+        'Developing end-to-end web applications by applying academic knowledge and practical project experience to build responsive frontends and reliable backend systems.'
     },
     {
       id: 'learning',
@@ -20,7 +22,9 @@ export default function AboutSection() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z" />
         </svg>
       ),
-      title: 'Build, Learn, Grow'
+      title: 'Build, Learn, Grow',
+      description:
+        'Growing as a developer by actively building projects, learning from real-world challenges, and continuously improving skills through hands-on experience.'
     },
     {
       id: 'continuous',
@@ -29,7 +33,9 @@ export default function AboutSection() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
         </svg>
       ),
-      title: 'Continuous Development'
+      title: 'Continuous Learning',
+      description:
+        'Actively exploring new technologies, tools, and best practices to stay adaptable and keep improving in a fast-changing tech environment.'
     }
   ];
 
@@ -91,6 +97,11 @@ export default function AboutSection() {
                   <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
                     {feature.title}
                   </h3>
+                  {feature.description && (
+                    <p className="mt-3 text-sm md:text-base text-slate-300 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  )}
                 </div>
               </div>
             </motion.div>

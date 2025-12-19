@@ -109,6 +109,9 @@ export default function Footer() {
                 <MagneticIcon icon={FaGithub} label="GitHub" href="https://github.com/Imashi-wimalasekera" />
                 <MagneticIcon icon={FaLinkedin} label="LinkedIn" href="https://www.linkedin.com/in/imashi-wimalasekera" />
               </div>
+              <p className="text-slate-400 text-sm mt-5">
+                Built with <span className="text-red-500">❤️</span>, code, and continuous learning.
+              </p>
             </div>
           </div>
         </div>
