@@ -187,6 +187,38 @@ export default function HeroSection() {
               <br />
               Wimalasekera
             </h1>
+            <motion.p 
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.05,
+                    delayChildren: 0.9,
+                  },
+                },
+              }}
+              className="mt-4 text-xl md:text-2xl font-semibold bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent"
+            >
+              {Array.from("IT Undergraduate | Full Stack Developer").map((char, index) => (
+                <motion.span
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 10 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { type: "spring", stiffness: 100, damping: 10 },
+                    },
+                  }}
+                  className="hover:text-purple-200 transition-colors"
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </motion.p>
           </motion.div>
 
           {/* Social Icons */}
