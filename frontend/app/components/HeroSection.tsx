@@ -2,11 +2,17 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function HeroSection() {
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
+  const [taglineKey, setTaglineKey] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setTaglineKey((k) => k + 1), 6000);
+    return () => clearInterval(id);
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -188,6 +194,7 @@ export default function HeroSection() {
               Wimalasekera
             </h1>
             <motion.p 
+              key={taglineKey}
               initial="hidden"
               animate="visible"
               variants={{
